@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University of Gurugram - Degree Payment</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f0f4f8;
+            font-family: 'Arial', sans-serif;
+        }
+        .payment-container {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 600px;
+            margin: 50px auto;
+            border-top: 6px solid hsl(350, 100%, 27%);
+        }
+        .university-header {
+            background-color: hsl(350, 100%, 27%);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px 8px 0 0;
+        }
+        .university-header h1 {
+            margin: 0;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .payment-details {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .payment-details p {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .payment-details strong {
+            color: hsl(350, 100%, 27%);
+            display: inline-block;
+            width: 120px;
+        }
+        .btn-pay {
+            background-color: hsl(350, 100%, 27%);
+            border-color: hsl(350, 100%, 27%);
+            padding: 12px 30px;
+            font-size: 18px;
+            border-radius: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            color: white;
+        }
+        .btn-pay:hover {
+            background-color: hsl(350, 100%, 27%);
+            border-color: hsl(350, 100%, 27%);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            color:white;
+        }
+        .total-amount {
+            font-size: 24px;
+            color: hsl(350, 100%, 27%);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="payment-container">
+            <div class="university-header">
+                <h1>University of Rajasthan</h1>
+            </div>
+
+            <h2 class="text-center mb-4">Degree Certificate Payment</h2>
+            
+            <div class="payment-details">
+                <p><strong>Name:</strong> <%= degreeRecord.name %></p>
+                <p><strong>Degree:</strong> <%= degreeRecord.degree %></p>
+                <p><strong>College:</strong> <%= degreeRecord.college %></p>
+                <p><strong>Year:</strong> <%= degreeRecord.year %></p>
+                <p><strong>Division:</strong> <%= degreeRecord.division %></p>
+                <p><strong>Date:</strong> <%= degreeRecord.date %></p>
+            </div>
+
+            <div class="total-amount">
+                Total Amount: ₹ 500
+            </div>
+
+            <form action="/payment" method="POST">
+                <button type="submit" class="btn btn-pay btn-block">
+                    Proceed to Payment
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
