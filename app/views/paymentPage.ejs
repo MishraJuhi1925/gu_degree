@@ -95,7 +95,7 @@
                 Total Amount: ₹ 500
             </div>
 
-            <form action="/payment" method="POST">
+            <form action="/payment/<%= degreeRecord.id %>" method="GET">
                 <button type="submit" class="btn btn-pay btn-block">
                     Proceed to Payment
                 </button>

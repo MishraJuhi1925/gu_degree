@@ -392,9 +392,9 @@
         <div class="line-break">
             <p class="hindi-text">हम, राजस्थान विश्वविद्यालय के कुलपति, उपकुलपति तथा सेनेट के सदस्य प्रमाणित करते हैं
                 कि</p>
-            <p class="hindi-text">Juhi Mishra को यह प्रमाण पत्र प्रदान करते हैं</p>
+            <p class="hindi-text"> <%= data.name %> को यह प्रमाण पत्र प्रदान करते हैं</p>
         </div>
-        <h3 class="degree">बैचलर ऑफ साइंस</h3>
+        <h3 class="degree"><%= data.degree %></h3>
         <div class="line-break">
             <p>की उपाधि प्रदान की गई।</p>
             <p>प्रमाण-पत्र इस विश्वविद्यालय की मुद्रा और कुलपति के</p>
@@ -406,10 +406,10 @@
             </p>
             <p class="hindi-text">and the Members of the Senate of Diversity of Haryana</p>
         </div>
-        <p class="details">St. Wilfred's P.G. College, Mansarovar (Jaipur)</p>
-        <p class="details">Year of Passing: 2023</p>
-        <p class="details">Division: First</p>
-        <p class="details">Date: 10-12-2024</p>
+        <p class="details"><%= data.college %></p>
+        <p class="details">Year of Passing: <%= data.year %></p>
+        <p class="details">Division: <%= data.division %></p>
+        <p class="details">Date: <%= data.date %></p>
         <div class="seals">
             <img src="/images/qr.jpeg" alt="QR Code" class="seal">
             <img src="/images/lgo1.jpeg" alt="University Logo" class="qr-code">

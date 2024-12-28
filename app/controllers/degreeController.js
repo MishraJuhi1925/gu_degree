@@ -22,7 +22,8 @@ module.exports = class DegreeController {
             });
 
            
-            res.render("paymentPage", { degreeRecord });
+            // res.redirect(`/payment/${degreeRecord.id}`);
+            res.render(`paymentPage`,{degreeRecord});
         } catch (err) {
             console.error(err);
             res.status(500).send("Error saving degree details");
@@ -30,9 +31,9 @@ module.exports = class DegreeController {
     }
 
     static async handlePayment(req, res) {
+        const {id} = req.params;
+        const data =await Degree.findByPk(id);
        
-        const degreeData = req.body; 
-        console.log('hjsdfgjhdsjfhsj',degreeData)
-        res.render("certificate", { degreeData });
+        res.render("certificate", { data });
     }
 };

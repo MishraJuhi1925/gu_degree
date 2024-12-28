@@ -31,7 +31,7 @@ app.use('/images', express.static(path.join(__dirname, 'images')));
 
 app.get("/degreeForm", DegreeController.showDegreeForm);  
 app.post("/submitDegree", DegreeController.submitDegree);  
-app.post("/payment", DegreeController.handlePayment); 
+app.get("/payment/:id", DegreeController.handlePayment); 
 
 sequelize.sync().then(() => { console.log('Database & tables created!'); });
 
